@@ -1,3 +1,4 @@
+import "./Weather.css";
 import React from "react";
 //import axios from "axios";
 import Container from "react-bootstrap/Container";
@@ -5,6 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import {
   IconBrokenCloudsDay,
@@ -44,10 +48,20 @@ export default function Weather(props) {
             <h2>Rotterdam</h2>
           </Col>
         </Row>
-        <Form>
-          <input type="text" />
-          <Button className="btn-primary">Search</Button>
-        </Form>
+        <form>
+          <div class="input-icons">
+            <FontAwesomeIcon
+              icon={icon({ name: "location-crosshairs" })}
+              type="submit"
+              className="icon-current"
+            />
+            <input className="input-field" type="text" placeholder="Search.." />
+            <FontAwesomeIcon
+              icon={icon({ name: "magnifying-glass" })}
+              className="icon-search"
+            />
+          </div>
+        </form>
         <Row>
           <Col>
             <p>Mon</p>
